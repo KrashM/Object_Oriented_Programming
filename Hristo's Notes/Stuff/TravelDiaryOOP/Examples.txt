@@ -1,0 +1,40 @@
+Registering user:
+1
+Krash
+Hi!there1
+Krash@mail.bg
+
+3
+3
+
+Login user:
+2
+Krash
+Hi!there1
+
+3
+3
+
+Login and add Travel:
+2
+Krash
+Hi!there1
+1
+Sofia
+22 06 2002
+26 06 2002
+5
+A very bussy city filled with cool stuff
+sunset.png hello.jpeg
+3
+3
+
+Login and search travel by destination:
+2
+Krash
+Hi!there1
+2
+Sofia
+
+3
+3
