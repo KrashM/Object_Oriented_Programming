@@ -2,6 +2,7 @@
 ## :computer: Course for Computer Science students at FMI Sofia University
 <!-- ## [:exclamation:](https://github.com/KrashM/Object_Oriented_Programming/blob/main/Seminar/Week%2001/InstallationGuide.md) Installation guide for VS Code and C++ -->
 ## :pushpin: Contents by weeks (Seminar):
+### [:one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2001) Revision, Structs, Unions, Object size
 
 ## :pushpin: Contents by weeks (Practicum):
 
