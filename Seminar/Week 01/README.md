@@ -272,4 +272,4 @@ int main()
 
 <h1>Домашно</h1>
 
-Домашното можете да немерите [тук](https://www.hackerrank.com/1-35)
+Домашното можете да немерите [тук](https://www.hackerrank.com/domashno-1-oop)
