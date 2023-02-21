@@ -105,6 +105,7 @@ int main()
 ```c++
 ifstream str("file.txt", <режим на работа>);
 ```
+
 Режимът на работа е цяло число. 
 
 | ios         | Ефект:                                                                                                                           |    |
@@ -266,7 +267,8 @@ file students2.csv successfully saved!
  -  Запазване на промените в друг файл (save as )
 
 Нека имаме двоичен файл, myData.dat, който се е получил след изпълнението на следния c++ код: 
- ```c++
+
+```c++
 int x = 25409;
 ofstream file(“myData.dat”, ios::binary);
 file.write( (const char*)&x, sizeof(x));
