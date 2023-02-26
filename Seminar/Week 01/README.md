@@ -105,7 +105,7 @@ struct Box
 ```c++
 Box b; //default values to height and width ans lenght
 
-Box b2 = {3, 4, 3.4} // height = 3, width = 3, length = 3.4;
+Box b2 = {3, 4, 3.4} // height = 3, width = 4, length = 3.4;
 
 Box b3;
 b3.height = 13;
