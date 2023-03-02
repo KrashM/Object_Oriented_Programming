@@ -1,0 +1,33 @@
+SampleStructPack1
+	flag: 1 Bytes
+	+
+	timeout: 4 Bytes
+	=
+	5 Bytes
+sizeof struct:  5 Bytes
+ -- 
+SampleStructPack2
+	flag: 1 Bytes
+	+
+	timeout: 4 Bytes
+	=
+	5 Bytes
+sizeof struct:  6 Bytes
+SampleStructPack4
+	flag: 1 Bytes
+	+
+	timeout: 4 Bytes
+	=
+	5 Bytes
+sizeof struct:  8 Bytes
+SampleStruct
+	flag: 1 Bytes
+	+
+	timeout: 4 Bytes
+	=
+	5 Bytes
+sizeof struct:  8 Bytes
+ -- 
+SampleStructPack1: 500000 bytes allocated in 178100 nanoseconds
+SampleStructPack2: 600000 bytes allocated in 42800 nanoseconds
+SampleStructPack4: 800000 bytes allocated in 77200 nanoseconds
