@@ -1,37 +1,46 @@
 #include <iostream>
 #include <fstream>
-#pragma warning(disable:4996)
-using namespace std;
 
+using std::ios;
+using std::cout;
+using std::ofstream;
+using std::ifstream;
 
-struct Test
-{
+struct Test{
+
 	bool b;
 	int x;
+
 };
 
-int main()
-{
+int main(){
 
-	{ //write
+	{   // write
+
 		Test t = { true, 45 };
 		ofstream file("testObj.bat", ios::binary);
 		
-		if (!file.open())
-			return -1;
+		if(!file.is_open()) return -1;
 
 		file.write((const char*)&t, sizeof(t));
+
+		file.close();
+
 	}
 
-	{ //read
+	{   // read
+
 		Test t;
 		ifstream file("testObj.bat", ios::binary);
 		
-		if (!file.open())
-			return -1;
+		if(!file.is_open()) return -1;
 
 		file.read((char*)&t, sizeof(t));
-		std::cout << t.b << " " << t.x << std::endl;
+
+		cout << t.b << " " << t.x << '\n';
+
+		file.close();
+
 	}
 
 }

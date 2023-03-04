@@ -1,22 +1,32 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
-using namespace std;
+using std::ios;
+using std::cout;
+using std::ifstream;
+using std::ofstream;
 
+struct Student{
 
-struct Student
-{
     char* name;
     int fn;
     int gradesCount;
     double averageGrade;
+
 };
-void print(const Student& st)
-{
-    cout << st.name << " " << st.fn << " " << st.gradesCount << " " << st.averageGrade << endl;
+
+void print(const Student &st){
+
+    cout << st.name << " "
+        << st.fn << " "
+        << st.gradesCount << " "
+        << st.averageGrade << '\n';
+
 }
-Student createStudent(const char* name, int fn, int gradesCount, double avGrade)
-{
+
+Student createStudent(const char * const &name, const int &fn, const int &gradesCount, const double &avGrade){
+
     Student obj;
 
     size_t nameLen = strlen(name);
@@ -29,9 +39,11 @@ Student createStudent(const char* name, int fn, int gradesCount, double avGrade)
     obj.averageGrade = avGrade;
 
     return obj;
+
 }
-void saveStudentToFile(ofstream& f, const Student& st)
-{
+
+void saveStudentToFile(ofstream &f, const Student &st){
+
     size_t nameLen = strlen(st.name);
 
     f.write((const char*)&nameLen, sizeof(nameLen));  //first we write the size of the name!
@@ -42,8 +54,9 @@ void saveStudentToFile(ofstream& f, const Student& st)
     f.write((const char*)&st.averageGrade, sizeof(st.averageGrade));
 
 }
-Student readStudentFromFile(ifstream& f)
-{
+
+Student readStudentFromFile(ifstream &f){
+
     Student res;
 
     size_t nameLen;
@@ -59,28 +72,30 @@ Student readStudentFromFile(ifstream& f)
     f.read((char*)&res.averageGrade, sizeof(res.averageGrade));
 
     return res;
-}
-void freeStudent(Student& s)
-{
-    delete[] s.name;
 
+}
+
+void freeStudent(Student &s){
+
+    delete[] s.name;
     s.averageGrade = s.fn = s.gradesCount = 0;
 
 }
 
+int main(){
 
-int main()
-{
-    { //save students to file
+    {   // save students to file
+
         Student s1 = createStudent("Ivan", 1234, 2, 4);
         Student s2 = createStudent("Petur", 5555, 5, 5.5);
 
         ofstream f1("uni.dat", ios::binary);
 
-        if (!f1.is_open())
-        {
-            cout << "Error" << endl;
+        if(!f1.is_open()){
+
+            cout << "Error\n";
             return -1;
+
         }
 
         saveStudentToFile(f1, s1);
@@ -90,16 +105,20 @@ int main()
         freeStudent(s2);
 
         f1.close();
+
     }
 
-    { //read students from file
+    {   // read students from file
+
         ifstream f2("uni.dat", ios::binary);
 
-        if (!f2.is_open())
-        {
-            cout << "Error" << endl;
+        if(!f2.is_open()){
+
+            cout << "Error\n";
             return -1;
+
         }
+
         Student s1 = readStudentFromFile(f2);
         Student s2 = readStudentFromFile(f2);
 
@@ -110,5 +129,7 @@ int main()
         freeStudent(s2);
 
         f2.close();
+
     }
+
 }

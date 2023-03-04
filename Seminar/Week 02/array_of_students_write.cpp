@@ -1,48 +1,53 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-using namespace std;
 
-struct Student
-{
+using std::ios;
+using std::cout;
+using std::ofstream;
+
+struct Student{
+
 	char name[30];
 	int age;
 	int fn;
+
 };
 
-void initStudent(Student& st, const char* name, int age, int fn)
-{
+void initStudent(Student& st, const char* name, int age, int fn){
+
 	strcpy(st.name, name);
 	st.age = age;
 	st.fn = fn;
+
 }
 
-void saveToFile(const Student* students, size_t count, ofstream& file)
-{
+void saveToFile(const Student* students, size_t count, ofstream& file){
 	file.write((const char*)students, count * sizeof(Student));
 }
 
 
-int main()
-{
+int main(){
+
 	Student* arr = new Student[4];
+
 	initStudent(arr[0], "ivan", 44, 1234);
 	initStudent(arr[1], "petur", 12, 765);
 	initStudent(arr[2], "alex", 15, 44);
 	initStudent(arr[3], "katerina", 19, 12134);
 
 	ofstream file("students.dat", ios::binary);
-		
-	if(!file.is_open())
-	{
-		std::cout << "Error while opening the file!" << std::endl;
+
+	if(!file.is_open()){
+
+		cout << "Error while opening the file!\n";
 		delete[] arr; //!
 		return -1;
+
 	}
-		
+
 	saveToFile(arr, 4, file);
-	
+
 	delete[] arr;
-	
-	return 0;
+
 }
