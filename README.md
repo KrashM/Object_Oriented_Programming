@@ -3,6 +3,7 @@
 <!-- ## [:exclamation:](https://github.com/KrashM/Object_Oriented_Programming/blob/main/Seminar/Week%2001/InstallationGuide.md) Installation guide for VS Code and C++ -->
 ## :pushpin: Contents by weeks (Seminar):
 ### [:one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2001) Revision, Structs, Unions, Object size
+### [:two:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2002) File streams
 
 ## :pushpin: Contents by weeks (Practicum):
 
