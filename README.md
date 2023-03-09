@@ -4,6 +4,7 @@
 ## :pushpin: Contents by weeks (Seminar):
 ### [:one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2001) Revision, Structs, Unions, Object size
 ### [:two:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2002) File streams
+### [:three:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2003) Classes, Methods, Encapsolation
 
 ## :pushpin: Contents by weeks (Practicum):
 
