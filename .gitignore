@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# Binary files
+*.dat
+
 # VS Code
 .vscode
