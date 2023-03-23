@@ -8,7 +8,7 @@ String::String(): str(new(nothrow) char[1]){ // Слагаме по default ст
     if(str) *str = '\0';
 }
 
-String::String(char const *str): str(new(nothrow) char[strlen(str) + 1]){
+String::String(char const * const &str): str(new(nothrow) char[strlen(str) + 1]){
     if(this -> str) strcpy(this -> str, str);
 }
 

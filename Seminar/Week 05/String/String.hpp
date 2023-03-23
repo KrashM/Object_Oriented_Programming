@@ -8,7 +8,7 @@ class String{
 
     public:
         String();
-        String(char const *);
+        String(char const * const &);
         String(String const &);
         ~String();
 
