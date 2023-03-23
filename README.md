@@ -6,6 +6,7 @@
 ### [:two:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2002) File streams
 ### [:three:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2003) Classes, Methods, Encapsolation
 ### [:four:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2004) Constructors, Destructors, Life Cycle, Initializing List
+### [:five:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2004) Abstraction, Copy constructor, Copy operator =, Multiple file compilation
 
 ## :pushpin: Contents by weeks (Practicum):
 
