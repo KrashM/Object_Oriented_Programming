@@ -54,7 +54,6 @@ BigNumber(long long int number);
 Предефинирайте следните оператори:
 
 ```c++
-// Mandatory
 bool operator == (const BigNumber& other) const;
 bool operator != (const BigNumber& other) const;
 bool operator < (const BigNumber& other) const;
@@ -75,7 +74,6 @@ BigNumber operator -- (int);
 
 BigNumber& operator - ();
 
-// Optional
 BigNumber& operator /= (const BigNumber& other);
 BigNumber operator / (const BigNumber& other) const;
 BigNumber& operator %= (const BigNumber& other);
