@@ -95,7 +95,7 @@ void Vector::insert(size_t const index, int const element){
 
 }
 
-void Vector::erase(size_t const element){
+void Vector::erase(int const element){
 
     if(!_size) return;
 
@@ -129,6 +129,7 @@ size_t Vector::size() const{
 bool Vector::empty() const{
     return !_size;
 }
+
 bool Vector::contains(int const element) const{
 
     for(size_t i = 0; i < _size; ++i)
@@ -166,6 +167,8 @@ void Vector::resize(size_t const newCapacity){
     _capacity = newCapacity;
     int *temp = new(nothrow) int[newCapacity];
 
+    assert(temp);
+
     for(size_t i = 0; i < _size; ++i)
         temp[i] = _v[i];
     
@@ -178,14 +181,15 @@ void Vector::copyFrom(Vector const &other){
 
     _capacity = other._capacity;
     _size = other._size;
-
-    free();
     _v = new(nothrow) int[other._capacity];
+
+    assert(_v);
 
     for(size_t i = 0; i < other._size; ++i)
         _v[i] = other._v[i];
 
 }
+
 void Vector::free(){
     delete[] _v;
 }
