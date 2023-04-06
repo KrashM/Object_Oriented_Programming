@@ -8,6 +8,7 @@
 ### [:four:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2004) Constructors, Destructors, Life Cycle, Initializing List
 ### [:five:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2005) Abstraction, Copy constructor, Copy operator =, Multiple file compilation
 ### [:six:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2006) Predefining operators, friend functions and classes, Mutable, Collections of pointers to objects
+### [:seven:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2007) Unit testing
 
 ## :pushpin: Contents by weeks (Practicum):
 
