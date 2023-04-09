@@ -7,10 +7,11 @@ using std::size_t;
 class Vector{
 
     public:
-        Vector(); // 10/10т.
+        Vector(); // 10т.
 
         Vector &operator +=(double const); // 5т.
-        Vector &operator +(double const); // 5т.
+        friend Vector operator +(Vector const &, double const); // 2.5т.
+        friend Vector operator +(double const, Vector const &); // 2.5т.
 
         double &operator [](size_t const); // 2.5т.
         double const operator [](size_t const) const; // 2.5т.

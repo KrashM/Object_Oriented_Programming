@@ -26,11 +26,19 @@ Word &Word::operator +=(char const element){
 
 }
 
-Word &Word::operator +(char const element){
+Word operator +(Word const &word, char const element){
 
-    if(_size == 20) return *this;
-    _w[_size++] = element;
-    return *this;
+    Word result(word);
+    result += element;
+    return result;
+
+}
+
+Word operator +(char const element, Word const &word){
+
+    Word result(word);
+    result += element;
+    return result;
 
 }
 

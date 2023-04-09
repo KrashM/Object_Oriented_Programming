@@ -11,11 +11,19 @@ Vector &Vector::operator +=(double const element){
 
 }
 
-Vector &Vector::operator +(double const element){
+Vector operator +(Vector const &vec, double const element){
 
-    if(_size == 20) return *this;
-    _v[_size++] = element;
-    return *this;
+    Vector result(vec);
+    result += element;
+    return result;
+
+}
+
+Vector operator +(double const element, Vector const &vec){
+
+    Vector result(vec);
+    result += element;
+    return result;
 
 }
 
