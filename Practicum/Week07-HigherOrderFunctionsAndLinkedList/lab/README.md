@@ -28,11 +28,11 @@ struct box
 - `std::size_t size()` - дава информация за размера на списъка
 - `bool empty()` - проверява дали списъкът е празен
 - `void merge(const LinkedList<T>& other, std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - слива два сортирани свързани списъка (ако `*this` или `other` не са сортирани, да не се прави нищо); за сравнение на два елемента използва `comparator`
-- `void sort(std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - сортира свързания списък; за сравнение на два елемента използва `comparator`
+- `void sort(std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - сортира свързания списък; за сравнение на два елемента използва `comparator` (използвайте Merge sort)
 - `MyLinkedList<T> filter(std::function<bool(const T&)> predicate)` - създава нов свързан списък с елементите, удовлетворяващи предиката `predicate`
 - `MyLinkedList<R> map(std::function<R(const T&)> mapper)` - създава нов свързан списък, като върху всеки елемент на текущия списък се прилага функцията `mapper`
 - `R reduce(const R& init, std::function<R(const R&, const T&)> reducer)` - по подадена начална стойност `init` връща резултата от прилагането на функцията `reducer` над всички елементи
 - `T& find(std::function<bool(const T&)> predicate)` - връща първия елемент от списъка, удовлетворяващ предиката `predicate`
 - `MyLinkedList<T> takeWhile(std::function<bool(const T&)> predicate)` - връща нов списък, съдържащ всички елементи до първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<T> dropWhile(std::function<bool(const T&)> predicate)` - връща нов списък, съдържащ всички елементи, започвайки от първия, за който предикатът `predicate` връща `false`
-- `MyLinkedList<R> zipWith(const LinkedList<T>& other, std::function<R(const T&, const T&)> zipper)` - връща нов списък, съдържащ елементи, които са резултати от прилагането на функцията `zipper` върху съответните елементи на `*this` и и `other`
+- `MyLinkedList<R> zipWith(const MyLinkedList<T>& other, std::function<R(const T&, const T&)> zipper)` - връща нов списък, съдържащ елементи, които са резултати от прилагането на функцията `zipper` върху съответните елементи на `*this` и и `other`
