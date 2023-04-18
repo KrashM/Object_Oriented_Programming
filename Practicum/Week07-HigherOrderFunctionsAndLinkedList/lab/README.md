@@ -39,3 +39,5 @@ struct box
 - `MyLinkedList<T> takeWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи до първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<T> dropWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи, започвайки от първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<R> zipWith(const MyLinkedList<T>& other, std::function<R(const T&, const T&)> zipper) const` - връща нов списък, съдържащ елементи, които са резултати от прилагането на функцията `zipper` върху съответните елементи на `*this` и и `other`
+
+Демонстрирайте употребата на всички методи на класа в `main`, като предоставите смислени примери.
