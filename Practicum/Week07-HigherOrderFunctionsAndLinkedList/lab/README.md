@@ -32,7 +32,7 @@ struct box
 - `std::size_t size() const` - дава информация за размера на списъка
 - `bool empty() const` - проверява дали списъкът е празен
 - `void reverse()` - обръща списъка (`[1 2 3]` ---> `[3 2 1]`)
-- `void merge(const MyLinkedList<T>& other, std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - слива два сортирани свързани списъка (ако `*this` или `other` не са сортирани, да не се прави нищо) в нов сортиран масив (`[1 3 5 7]`, `[2 4 6 8] ---> `[1 2 3 4 5 6 7 8]`); за сравнение на два елемента използва `comparator`
+- `void merge(const MyLinkedList<T>& other, std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - слива два сортирани свързани списъка (ако `*this` или `other` не са сортирани, да не се прави нищо) в нов сортиран масив (`[1 3 5 7]`, `[2 4 6 8]` ---> `[1 2 3 4 5 6 7 8]`); за сравнение на два елемента използва `comparator`
 - `void sort(std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - сортира свързания списък; за сравнение на два елемента използва `comparator` (използвайте Merge sort)
 - `MyLinkedList<T> filter(std::function<bool(const T&)> predicate) const` - създава нов свързан списък с елементите, удовлетворяващи предиката `predicate`
 - `MyLinkedList<R> map(std::function<R(const T&)> mapper) const` - създава нов свързан списък, като върху всеки елемент на текущия списък се прилага функцията `mapper`
