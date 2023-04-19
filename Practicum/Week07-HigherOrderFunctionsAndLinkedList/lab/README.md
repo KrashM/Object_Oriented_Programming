@@ -27,18 +27,28 @@ struct box
 - `T& back()` - достъпва последния елемент на списъка
 - `T& middle()` - достъпва средния елемент на списъка
 - константни версии на горепосочените 4 функции
+- `T head()` - връща първия елемент на списъка
+- `MyLinkedList<T> tail()` - връща всички елементи без първия
 - `std::size_t size() const` - дава информация за размера на списъка
 - `bool empty() const` - проверява дали списъкът е празен
-- `void reverse()` - обръща списъка (`1 2 3` ---> `3 2 1`)
-- `void merge(const MyLinkedList<T>& other, std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - слива два сортирани свързани списъка (ако `*this` или `other` не са сортирани, да не се прави нищо) в нов сортиран масив (`1 3 5 7`, `2 4 6 8` ---> `1 2 3 4 5 6 7 8`); за сравнение на два елемента използва `comparator`
+- `void reverse()` - обръща списъка (`[1 2 3]` ---> `[3 2 1]`)
+- `void merge(const MyLinkedList<T>& other, std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - слива два сортирани свързани списъка (ако` `*this` или `other` не са сортирани, да не се прави нищо) в нов сортиран масив (`[1 3 5 7]`, `[2 4 6 8] ---> `[1 2 3 4 5 6 7 8]`); за сравнение на два елемента използва `comparator`
 - `void sort(std::function<bool(const T&, const T&)> compartor = [](const T& first, const T& second)->bool{return first < second;})` - сортира свързания списък; за сравнение на два елемента използва `comparator` (използвайте Merge sort)
 - `MyLinkedList<T> filter(std::function<bool(const T&)> predicate) const` - създава нов свързан списък с елементите, удовлетворяващи предиката `predicate`
 - `MyLinkedList<R> map(std::function<R(const T&)> mapper) const` - създава нов свързан списък, като върху всеки елемент на текущия списък се прилага функцията `mapper`
-- `R reduce(const R& init, std::function<R(const R&, const T&)> reducer) const` - по подадена начална стойност `init` връща резултата от прилагането на функцията `reducer` над всички елементи
+- `R foldLeft(const R& init, std::function<R(const R&, const T&)> folder) const` - по подадена начална стойност `init` връща резултата от прилагането на функцията `folder` над всички елементи
+- `T reduce(std::function<T(const T&, const T&)> reducer) const` - същото като `foldLeft`, но за стойност на `init` взима първия елемент на списъка
 - `T& find(std::function<bool(const T&)> predicate)` - връща първия елемент от списъка, удовлетворяващ предиката `predicate`
 - константна версия на горната функция
 - `MyLinkedList<T> takeWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи до първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<T> dropWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи, започвайки от първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<R> zipWith(const MyLinkedList<T>& other, std::function<R(const T&, const T&)> zipper) const` - връща нов списък, съдържащ елементи, които са резултати от прилагането на функцията `zipper` върху съответните елементи на `*this` и и `other`
+- `MyLinkedList<MyLinkedList<T>> group()` - връща списък от списъци, конкатенацията на които е равна на първоначални списък и всеки подсписък съдържа само еднакви елементи (`["Mississippi"]` ---> `[["M"], ["i"], ["ss"], ["i"], ["ss"], ["i"], ["pp"], ["i"]]`)
+- `MyLinkedList<MyLinkedList<T>> groupBy(std::function<bool(const T&, const T&)> predicate)` - същото като `group`, само че използва `predicate` вместо `==`
+- `MyLinkedList<MyLinkedList<T>> inits()` - връща списък от всички префикси (`["abc"]` ---> `[[""], ["a"], ["ab"], ["abc"]]`)
+- `MyLinkedList<MyLinkedList<T>> tails()` - връща списък от всички суфикси (`["abc"]` ---> `[["abc"], ["bc"], ["c"], [""]]`)
+- `std::pair<MyLinkedList<T>, MyLinkedList<T>> partition(std::function<bool(const T&)> predicate)` - връща наредена двойка от списъци - първият съдържа всички елементи, за които `predicate` дава `true`, а вторият всички, за които дава `false`
+- `bool all(std::function<bool(const T&)> predicate)` - проверява дали всички елементи на списъка удовлетворяват предиката `predicate` (*квантор за всеобщност*)
+- `bool any(std::function<bool(const T&)> predicate)` - проверява дали има поне един елемент в списъка, удовлетворяващ предиката `predicate` (*квантор за съществуване*)
 
 Демонстрирайте употребата на всички методи на класа в `main`, като предоставите смислени примери.
