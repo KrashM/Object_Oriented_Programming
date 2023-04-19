@@ -43,8 +43,8 @@ struct box
 - `MyLinkedList<T> takeWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи до първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<T> dropWhile(std::function<bool(const T&)> predicate) const` - връща нов списък, съдържащ всички елементи, започвайки от първия, за който предикатът `predicate` връща `false`
 - `MyLinkedList<R> zipWith(const MyLinkedList<T>& other, std::function<R(const T&, const T&)> zipper) const` - връща нов списък, съдържащ елементи, които са резултати от прилагането на функцията `zipper` върху съответните елементи на `*this` и и `other`
-- `MyLinkedList<MyLinkedList<T>> group() const` - връща списък от списъци, конкатенацията на които е равна на първоначални списък и всеки подсписък съдържа само еднакви елементи (`["Mississippi"]` ---> `[["M"], ["i"], ["ss"], ["i"], ["ss"], ["i"], ["pp"], ["i"]]`)
-- `MyLinkedList<MyLinkedList<T>> groupBy(std::function<bool(const T&, const T&)> predicate) const` - същото като `group`, само че използва `predicate` вместо `==`
+- `MyLinkedList<MyLinkedList<T>> group() const` - връща списък от списъци, конкатенацията на които е равна на първоначалния списък и всеки подсписък съдържа само еднакви елементи (`["Mississippi"]` ---> `[["M"], ["i"], ["ss"], ["i"], ["ss"], ["i"], ["pp"], ["i"]]`)
+- `MyLinkedList<MyLinkedList<T>> groupBy(std::function<bool(const T&, const T&)> comparator) const` - същото като `group`, само че използва `comparator` вместо `==`
 - `MyLinkedList<MyLinkedList<T>> inits() const` - връща списък от всички префикси (`["abc"]` ---> `[[""], ["a"], ["ab"], ["abc"]]`)
 - `MyLinkedList<MyLinkedList<T>> tails() const` - връща списък от всички суфикси (`["abc"]` ---> `[["abc"], ["bc"], ["c"], [""]]`)
 - `std::pair<MyLinkedList<T>, MyLinkedList<T>> partition(std::function<bool(const T&)> predicate) const` - връща наредена двойка от списъци - първият съдържа всички елементи, за които `predicate` дава `true`, а вторият всички, за които дава `false`
