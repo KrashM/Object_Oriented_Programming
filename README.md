@@ -9,6 +9,7 @@
 ### [:five:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2005) Abstraction, Copy constructor, Copy operator =, Multiple file compilation
 ### [:six:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2006) Predefining operators, friend functions and classes, Mutable, Collections of pointers to objects
 ### [:seven:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2007) Unit testing
+### [:eight:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2008) Move semantics, Exceptions, Compositions
 
 ## :pushpin: Contents by weeks (Practicum):
 
