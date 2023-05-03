@@ -14,6 +14,8 @@ public:
     {
         std::cout << "My name is " << this->name << " and I am " << this->age << " years old." << std::endl;
     }
+
+    virtual ~FMIPerson() = default;
 };
 
 class Lecturer : public FMIPerson
@@ -32,6 +34,8 @@ public:
         std::cout << "I am a lecturer in FMI, I teach " << this->subject << " and I have "
         << this->yearsOfExperience << " years of experience" << std::endl;
     }
+
+    virtual ~Lecturer() = default;
 };
 
 class Assistant : public FMIPerson
@@ -51,6 +55,8 @@ public:
         std::cout << "I am a " << assistant << " assistant in FMI and I teach " 
         << this->subject << std::endl;
     }
+
+    virtual ~Assistant() = default;
 };
 
 class Student : public FMIPerson
@@ -70,6 +76,8 @@ public:
         std::cout << "I am a " << this->year << "-year student in FMI, I study " 
         << this->major << " and I am group " << this->group << std::endl;
     }
+
+    virtual ~Student() = default;
 };
 
 class FMI
