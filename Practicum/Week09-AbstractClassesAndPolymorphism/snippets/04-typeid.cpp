@@ -34,8 +34,6 @@ public:
         std::cout << "I am a lecturer in FMI, I teach " << this->subject << " and I have "
         << this->yearsOfExperience << " years of experience" << std::endl;
     }
-
-    virtual ~Lecturer() = default;
 };
 
 class Assistant : public FMIPerson
@@ -55,8 +53,6 @@ public:
         std::cout << "I am a " << assistant << " assistant in FMI and I teach " 
         << this->subject << std::endl;
     }
-
-    virtual ~Assistant() = default;
 };
 
 class Student : public FMIPerson
@@ -76,8 +72,6 @@ public:
         std::cout << "I am a " << this->year << "-year student in FMI, I study " 
         << this->major << " and I am group " << this->group << std::endl;
     }
-
-    virtual ~Student() = default;
 };
 
 class FMI
@@ -113,17 +107,65 @@ private:
         this->fmi[this->size++] = person;
     }
 
-public:
-    FMI() : fmi(new FMIPerson*[FMI::INITIAL_CAPACITY]), size(0), capacity(FMI::INITIAL_CAPACITY) {}
-    FMI(const FMI& other) = delete;
-    FMI& operator = (const FMI& other) = delete;
-    ~FMI()
+    void copy(const FMI& other)
+    {
+        this->fmi = new FMIPerson*[other.capacity];
+        
+        for (std::size_t i = 0; i < other.size; ++i)
+        {
+            if (typeid(*other.fmi[i]) == typeid(Lecturer))
+            {
+                Lecturer* tempPtr = dynamic_cast<Lecturer*>(other.fmi[i]);
+                this->fmi[i] = new Lecturer(*tempPtr);
+            }
+            else if (typeid(*other.fmi[i]) == typeid(Assistant))
+            {
+                Assistant* tempPtr = dynamic_cast<Assistant*>(other.fmi[i]);
+                this->fmi[i] = new Assistant(*tempPtr);
+            }
+            else if (typeid(*other.fmi[i]) == typeid(Student))
+            {
+                Student* tempPtr = dynamic_cast<Student*>(other.fmi[i]);
+                this->fmi[i] = new Student(*tempPtr);
+            }
+            else
+            {
+                this->fmi[i] = new FMIPerson(*other.fmi[i]);
+            }
+        }
+
+        this->capacity = other.capacity;
+        this->size = other.size;
+    }
+
+    void deallocate()
     {
         for (std::size_t i = 0; i < this->size; ++i)
         {
             delete this->fmi[i];
         }
         delete[] this->fmi;
+    }
+
+public:
+    FMI() : fmi(new FMIPerson*[FMI::INITIAL_CAPACITY]), size(0), capacity(FMI::INITIAL_CAPACITY) {}
+    FMI(const FMI& other)
+    {
+        this->copy(other);
+    }
+    FMI& operator = (const FMI& other)
+    {
+        if (this != &other)
+        {
+            this->deallocate();
+            this->copy(other);
+        }
+
+        return *this;
+    }
+    ~FMI()
+    {
+        this->deallocate();
     }
 
     void addFMIPerson(const std::string& name, int age)
@@ -156,6 +198,8 @@ public:
     }
 };
 
+
+
 int main ()
 {
     FMI fmi;
@@ -170,6 +214,12 @@ int main ()
     fmi.addFMIPerson("Lelya Ginche", 62);
 
     fmi.printFMI();
+
+    FMI fmi2 = fmi;
+
+    std::cout << "################" << std::endl;
+
+    fmi2.printFMI();
 
     return 0;
 }

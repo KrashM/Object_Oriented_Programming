@@ -3,7 +3,7 @@
 
 class FMIPerson
 {
-private:
+protected:
     std::string name;
     int age;
 
@@ -13,6 +13,11 @@ public:
     virtual void whoAmI() const
     {
         std::cout << "My name is " << this->name << " and I am " << this->age << " years old." << std::endl;
+    }
+
+    virtual FMIPerson* clone()
+    {
+        return new FMIPerson(this->name, this->age);
     }
 
     virtual ~FMIPerson() = default;
@@ -35,7 +40,10 @@ public:
         << this->yearsOfExperience << " years of experience" << std::endl;
     }
 
-    virtual ~Lecturer() = default;
+    virtual FMIPerson* clone() override final
+    {
+        return new Lecturer(this->name, this->age, this->subject, this->yearsOfExperience);
+    }
 };
 
 class Assistant : public FMIPerson
@@ -56,7 +64,10 @@ public:
         << this->subject << std::endl;
     }
 
-    virtual ~Assistant() = default;
+    virtual FMIPerson* clone() override final
+    {
+        return new Assistant(this->name, this->age, this->subject, this->isPartTime);
+    }
 };
 
 class Student : public FMIPerson
@@ -77,7 +88,10 @@ public:
         << this->major << " and I am group " << this->group << std::endl;
     }
 
-    virtual ~Student() = default;
+    virtual FMIPerson* clone() override final
+    {
+        return new Student(this->name, this->age, this->major, this->year, this->group);
+    }
 };
 
 class FMI
@@ -113,10 +127,42 @@ private:
         this->fmi[this->size++] = person;
     }
 
+    void copy(const FMI& other)
+    {
+        this->fmi = new FMIPerson*[other.capacity];
+        for (int i = 0; i < other.size; ++i)
+        {
+            this->fmi[i] = other.fmi[i]->clone();
+        }
+        this->size = other.size;
+        this->capacity = other.capacity;
+    }
+
+    void deallocate()
+    {
+        for (std::size_t i = 0; i < this->size; ++i)
+        {
+            delete this->fmi[i];
+        }
+        delete[] this->fmi;
+    }
+
 public:
     FMI() : fmi(new FMIPerson*[FMI::INITIAL_CAPACITY]), size(0), capacity(FMI::INITIAL_CAPACITY) {}
-    FMI(const FMI& other) = delete;
-    FMI& operator = (const FMI& other) = delete;
+    FMI(const FMI& other)
+    {
+        this->copy(other);
+    }
+    FMI& operator = (const FMI& other)
+    {
+        if (this != &other)
+        {
+            this->deallocate();
+            this->copy(other);
+        }
+
+        return *this;
+    }
     ~FMI()
     {
         for (std::size_t i = 0; i < this->size; ++i)
@@ -151,7 +197,6 @@ public:
         for (std::size_t i = 0; i < this->size; ++i)
         {
             this->fmi[i]->whoAmI();
-            std::cout << "-------------------" << std::endl;
         }
     }
 };
@@ -170,6 +215,12 @@ int main ()
     fmi.addFMIPerson("Lelya Ginche", 62);
 
     fmi.printFMI();
+
+    FMI fmi2 = fmi;
+
+    std::cout << "################" << std::endl;
+
+    fmi2.printFMI();
 
     return 0;
 }

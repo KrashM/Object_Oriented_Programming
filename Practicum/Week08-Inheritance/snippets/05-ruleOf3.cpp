@@ -39,7 +39,7 @@ public:
 
         return *this;
     }
-    ~Person()
+    virtual ~Person()
     {
         this->deallocate();
     }
