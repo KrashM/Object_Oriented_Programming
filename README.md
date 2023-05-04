@@ -11,6 +11,8 @@
 ### [:seven:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2007) Unit testing
 ### [:eight:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2008) Move semantics, Exceptions, Compositions
 ### [:nine:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2009) Static, Singleton, Template, Header optimizations, Implicit and Explicit
+### [:one::zero:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2010) Inheritance
+### [:one::one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2011) Polymorphism
 
 ## :pushpin: Contents by weeks (Practicum):
 
