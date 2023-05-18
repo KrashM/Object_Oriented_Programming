@@ -13,6 +13,7 @@
 ### [:one::zero:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2010) Inheritance
 ### [:one::one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2011) Polymorphism, Virtual functions, Override and final, Pure virtual functions, Abstract classes and interfaces
 ### [:one::two:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2012) Heterogeneous containers
+### [:one::three:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2012) Diamond problem, Factory principle, Type casting
 
 ## :pushpin: Contents by weeks (Practicum):
 
