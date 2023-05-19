@@ -34,7 +34,7 @@ Shape const * const ShapeCollection::operator [](std::size_t const index) const{
 void ShapeCollection::addShape(Shape * const shape){
 
 	if(size == capacity) resize();
-	shapes[size++] = shape -> clone();
+	shapes[size++] = shape;
 
 }
 
@@ -47,7 +47,7 @@ void ShapeCollection::addCircle(int const x1, int const y1, int const r){
 }
 
 void ShapeCollection::addTriangle(int const x1, int const y1, int const x2, int const y2, int const x3, int const y3){
-	addShape(new Triangle(x1, y1,x2,y2, x3, y3));
+	addShape(new Triangle(x1, y1, x2, y2, x3, y3));
 }
 
 double ShapeCollection::getPerOfFigureByIndex(std::size_t const ind) const{

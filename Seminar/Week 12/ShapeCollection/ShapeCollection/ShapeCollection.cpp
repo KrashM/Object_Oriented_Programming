@@ -27,7 +27,7 @@ ShapeCollection::~ShapeCollection(){
 void ShapeCollection::addShape(Shape * const shape){
 
 	if(size == capacity) resize();
-	shapes[size++] = shape -> clone();
+	shapes[size++] = shape;
 
 }
 
