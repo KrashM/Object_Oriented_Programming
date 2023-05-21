@@ -1,10 +1,10 @@
 # Unit тестове
 
 ## Задача 1 :one::one::two::three::five::eight:...
-Използвайки принципа на **TDD** *(Test Driven Development)*, реализирайте клас `FibonacciSolver`, съдържащ единствен метод `int getNthFibonacciNumber(int n)`, който намира `N`-тото число на Фибоначи. Ако е подадено невалидно число, хвърлете подходящо изключение.
+Използвайки принципа на **TDD** *(Test Driven Development)*, реализирайте клас `FactorielSolver`, съдържащ единствен метод `long long solve(int n)`, който пресмята `n!`. Ако е подадено невалидно число (отрицателно), хвърлете подходящо изключение.
 
 ## Задача 2 :capital_abcd::abcd:
-Напишете подходящи **unit тестове** за класа `MyString`, разположен в папката `triffon/oop-2021-22/practicum/4/Week14-UnitTests/lab/MyString`.
+Напишете подходящи **unit тестове** за класа `MyString`, разположен в папката `KrashM/Object_Oriented_Programming/Practicum/Week11-UnitTestsDocumentation/lab/MyString`.
 
 # Инструкции за използване на DoxyGen
 DoxyGen ни дава лесна възможност да генерираме документация за кода ни.

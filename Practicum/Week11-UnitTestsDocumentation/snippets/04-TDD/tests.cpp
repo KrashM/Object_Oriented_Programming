@@ -1,19 +1,20 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../doctest.h"
-#include "factorielSolver.h"
+#include "fibonacciSolver.h"
 
 TEST_CASE("basic")
 {
-    FactorielSolver solver;
+    FibonacciSolver solver;
 
-    CHECK(solver.solve(0) == 1);
-    CHECK(solver.solve(1) == 1);
+    REQUIRE(solver.solve(1) == 0);
+    REQUIRE(solver.solve(2) == 1);
 
-    CHECK(solver.solve(3) == 6);
-    CHECK(solver.solve(4) == 24);
-    CHECK(solver.solve(2) == 2);
+    REQUIRE(solver.solve(5) == 3);
+    REQUIRE(solver.solve(6) == 5);
+    REQUIRE(solver.solve(7) == 8);
 
-    CHECK_THROWS_AS(solver.solve(-5), std::invalid_argument);
+    REQUIRE_THROWS_AS(solver.solve(-1), std::invalid_argument);
+    REQUIRE_THROWS_AS(solver.solve(0), std::invalid_argument);
 
-    CHECK(solver.solve(20) == 2432902008176640000);
+    REQUIRE_EQ(solver.solve(51), 12586269025);
 }
