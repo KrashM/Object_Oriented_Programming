@@ -14,6 +14,7 @@
 ### [:one::one:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2011) Polymorphism, Virtual functions, Override and final, Pure virtual functions, Abstract classes and interfaces
 ### [:one::two:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2012) Heterogeneous containers
 ### [:one::three:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2013) Diamond problem, Factory principle, Type casting
+### [:one::four:](https://github.com/KrashM/Object_Oriented_Programming/tree/main/Seminar/Week%2014) SOLID principle
 
 ## :pushpin: Contents by weeks (Practicum):
 
