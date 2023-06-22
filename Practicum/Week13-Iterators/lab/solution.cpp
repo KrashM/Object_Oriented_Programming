@@ -12,10 +12,6 @@ public:
     virtual ~Set() = default;
 };
 
-// PredicateSet
-// Конструкторът приема функция от типа: T -> bool
-// Конструкторът приема функция, която определя ... 
-
 template <class T>
 class PredicateSet : public Set<T>
 {
