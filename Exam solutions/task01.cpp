@@ -70,7 +70,7 @@ public:
             SequenceIterator old = *this;
             ++(*this);
 
-            return *this;
+            return old;
         }
 
         bool operator == (const SequenceIterator& other) const
